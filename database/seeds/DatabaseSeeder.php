@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use PanicHD\PanicHD\Seeds\Basic;
+use PanicHD\PanicHD\Seeds\DemoDataSeeder;
+use PanicHD\PanicHD\Seeds\SettingsTableSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -12,5 +15,11 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UsersTableSeeder::class);
+        $this->call([
+            UsersTableSeeder::class,
+            SettingsTableSeeder::class,
+            DemoDataSeeder::class,
+            Basic::class,
+        ]);
     }
 }
